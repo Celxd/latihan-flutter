@@ -18,7 +18,7 @@ class _kalkulatorState extends State<kalkulator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("formRegistration"),
+        title: Text("Kalkulator"),
       ),
       body: Container(
         margin: EdgeInsets.all(10),
@@ -27,9 +27,7 @@ class _kalkulatorState extends State<kalkulator> {
           children: [
             TextField(
               keyboardType: TextInputType.number,
-              inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
-              ],
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               controller: ctrPanjang,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -41,9 +39,7 @@ class _kalkulatorState extends State<kalkulator> {
             ),
             TextField(
               keyboardType: TextInputType.number,
-              inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
-              ],
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               controller: ctrLebar,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -54,15 +50,14 @@ class _kalkulatorState extends State<kalkulator> {
               height: 10,
             ),
             Center(
-                child: Container(
+              child: Container(
               width: 200,
               child: ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      if (ctrPanjang.text.isNotEmpty &&
-                          ctrLebar.text.isNotEmpty) {
+                      if (ctrPanjang.text.isNotEmpty && ctrLebar.text.isNotEmpty) {
                         int hasil = int.parse(ctrPanjang.text) *
-                            int.parse(ctrLebar.text);
+                        int.parse(ctrLebar.text);
                         ctrHasil.text = hasil.toString();
                       } else {
                         Alert(
