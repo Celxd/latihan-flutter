@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:latihan_flutter/formRegistration.dart';
 
 class SecondRoute extends StatefulWidget {
@@ -23,6 +24,8 @@ class _SecondRouteState extends State<SecondRoute> {
           children: [
             TextField(
               controller: ctrPhone,
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Input Phone Number",
