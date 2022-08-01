@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'SecondRoute.dart';
+
 class formRegistration extends StatefulWidget {
   const formRegistration({Key? key}) : super(key: key);
 
@@ -10,8 +12,10 @@ class formRegistration extends StatefulWidget {
 class _formRegistrationState extends State<formRegistration> {
   TextEditingController ctrUsername = new TextEditingController();
   TextEditingController ctrPassword = new TextEditingController();
+  TextEditingController ctrPhone = new TextEditingController();
 
   int id = 1;
+  String phoneNumber = "-";
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +63,10 @@ class _formRegistrationState extends State<formRegistration> {
                   onChanged: (val) {
                     setState(() {
                       id = 1;
-                      
                     });
                   },
                 ),
-                Text("Male")
+                Text("Male"),
               ],
             ),
             Row(
@@ -74,22 +77,34 @@ class _formRegistrationState extends State<formRegistration> {
                   onChanged: (val) {
                     setState(() {
                       id = 2;
-                      
                     });
                   },
                 ),
                 Text("Female")
               ],
             ),
+            Text("Phone number: " + phoneNumber),
+            ElevatedButton(
+                onPressed: () async {
+                  final result = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SecondRoute()),
+                  );
+
+                  setState(() {
+                    phoneNumber = result.toString();
+                  });
+                },
+                child: Text("Input Phone number")),
             Center(
-              child: Container(
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Submit'),
-                ),
-              )
-            ),
+                child: Container(
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('Submit'),
+              ),
+            )),
           ],
         ),
       ),
