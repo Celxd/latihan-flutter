@@ -20,7 +20,7 @@ class _formRegistrationState extends State<formRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Form Registration")),
+      // appBar: AppBar(title: Text("Form Registration")),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(

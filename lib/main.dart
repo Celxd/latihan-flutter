@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_flutter/formRegistration.dart';
-import 'package:latihan_flutter/kalkulator.dart';
+import 'package:latihan_flutter/tabBarEexample.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const formRegistration(),
+      home: const tabBarExample()
     );
   }
 }

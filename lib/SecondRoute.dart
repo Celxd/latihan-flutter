@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:latihan_flutter/formRegistration.dart';
 
 class SecondRoute extends StatefulWidget {
   const SecondRoute({Key? key}) : super(key: key);
